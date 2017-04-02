@@ -57,5 +57,6 @@ return [
     */
     'commands' => [
         TelegramBot\TelegramCommands\HelpCommand::class,
+        TelegramBot\TelegramCommands\QuoteCommand::class,
     ],
 ];
