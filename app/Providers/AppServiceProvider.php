@@ -2,7 +2,9 @@
 
 namespace TelegramBot\Providers;
 
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
+use TelegramBot\Services\Coinbase;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      $this->app->bind(Coinbase::class, function(){
+        return new Coinbase(new Client());
+      });
     }
 
     /**
